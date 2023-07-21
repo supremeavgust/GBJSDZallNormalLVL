@@ -60,12 +60,15 @@ console.log(arr2);
 
 // Пусть у нас дан массив состоящий из 10 элементов с произвольными числами. Давайте переберем его циклом и числа, которые делятся на 2, возведем в квадрат и выведем в консоль, а числа, которые делятся на 3, возведем в куб и выведем в консоль.
 
-const randomsArr = Array.from({ length: 5 }, () => Math.floor(Math.random() * 10));
+const randomsArr = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10));
 console.log(randomsArr);
 for (let i = 0; i < randomsArr.length; i++) {
-  console.log(randomsArr[i] % 2);
+  if (randomsArr[i] % 2 === 0) {
+    console.log(`число которое делиться на 2 ${randomsArr[i]} возведенное в квадрат ${Math.pow(randomsArr[i], 2)}`);
+  } else if (randomsArr[i] % 3 === 0) {
+    console.log(`число которое делиться на 3 ${randomsArr[i]} возведенное в куб ${Math.pow(randomsArr[i], 3)}`);
+  }
 }
-
 // Дан массив const arr = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3];
 // Подсчитайте количество цифр 3 в этом массиве.
 const arr6 = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3];
